@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lonely Very Mush Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #243866;
+            flex-direction: column;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            width: 100%;
+            max-width: 332px;
+            height: auto;
+        }
+        .start-button, .quiz-button {
+            margin-top: 1.25rem;
+            font-size: 1.25rem;
+            color: black;
+            border-radius: 1.875rem;
+            background-color: white;
+            padding: 0.625rem 1.25rem;
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+            border: none;
+            height: 2.5rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse 2s infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes pulse {
+            0% {
+            transform: scale(1);
+            }
+            50% {
+            transform: scale(1.1);
+            }
+            100% {
+            transform: scale(1);
+            }
+        }
+        .start-button:hover, .quiz-button:hover {
+            background-color: #e84118;
+        }
+        .quiz-container {
+            display: none;
+            width: 100%;
+        }
+        .quiz-question {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .quiz-choice {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .round-box {
+            background-color: yellow;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        @media (max-width: 600px) {
+            body {
+            height: auto;
+            padding: 20px 0;
+            }
+            .container {
+                width: 100%;
+            }
+            img {
+                width: 90%;
+            }
+            .start-button, .quiz-button {
+                width: 90%;
+                max-width: 200px;
+            }
+        }
+        p {
+            font-size: 1rem;
+            margin-top: 0;
+            font-family: "Bai Jamjuree", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="home" class="page active">
+
+            <img src="/img/logo.png" alt="Lonely Very Mush">
+            <p style="color: white; font-size: 0.875rem; margin-top: -10px;">by @Otterlone.BKK</p>
+            <button class="start-button" onclick="navigate('page2')">เริ่มต้น</button>
+        </div>
+
+        <div id="page2" class="page quiz-container">
+            <div style="flex-direction: column;">
+                <p> คำชี้แจง</p>
+                <p>    เรื่องราวต่อไปนี้สร้างขึ้นเพื่อความบันเทิงเท่านั้น
+                    ตัวละคร พฤติกรรม สถานที่และเหตุการณ์ในเรื่อง
+                    เป็นเหตุการณ์สมมติ มิได้พาดพิงถึงองค์กร วิชาชีพ
+                    หรือกลุ่มบุคคลใดๆ
+                        นอกจากนี้ ข้อคำถามและผลลัพธ์จากเว็บไซต์นี้
+                    ไม่ใช่ แบบทดสอบทางจิตวิทยา หรือโหราศาสตร์
+                    เป็นเพียงส่วนหนึ่งของการเล่าเรื่องราวแบบให้ผู้เล่น
+                    มีส่วนร่วมด้วยเท่านั้น
+                </p>
+                <p style="color: yellow; padding: 10px; border-radius: 5px;">แต่ถ้าวันนึงจู่ ๆ ได้ยินเสียง “ป๊อป!” อย่าลืมดูบนหัวเป็นที่แรกนะ...</p>
+                <button class="quiz-button" onclick="navigate('page3')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+
+        <div id="page3" class="page quiz-container">
+            <div style="flex-direction: column;">
+                <p>...</p>
+                <button class="quiz-button" onclick="navigate('page4')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page4" class="page quiz-container">
+            <div style="flex-direction: column;">
+
+                <img src="/img/page4.png" style="width: 100%; max-width: 800px;">
+                <button class="quiz-button" onclick="navigate('page5')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page5" class="page quiz-container">
+            <div style="flex-direction: column;">
+
+                <img src="/img/page5-1.png">
+                <img src="/img/page5-2.png">
+                <img src="/img/page5-3.png">
+                <button class="quiz-button" onclick="navigate('page6')">กลับหน้าแรก</button>
+            </div>
+        </div>
+        <div id="page6" class="page quiz-container">
+            <div style="flex-direction: column;">
+                <p>ติ๊ง !</p>
+                <button class="button" onclick="navigate('page7')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page7" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <img src="/img/page7.png" alt="Page 7">
+            <button class="quiz-button" onclick="navigate('page8')">เริ่มทำแบบประเมิน</button>
+            </div>
+        </div>
+        <div id="page8" class="page quiz-container">
+            <div style="flex-direction: column;"></div>
+            <img src="/img/page8.png" alt="Page 8">
+            <button class="quiz-button" onclick="navigate('page9')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page9" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <button class="quiz-button" onclick="navigate('page10')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page10" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <img src="/img/page10.png" alt="Page 10">
+            <button class="quiz-button" onclick="navigate('page11')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page11" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <img src="/img/page11.png" alt="Page 11">
+            <button class="quiz-button" onclick="navigate('page12')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page12" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <img src="/img/page12.png" alt="Page 12">
+            <button class="quiz-button" onclick="navigate('page13')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page13" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <img src="/img/page13.png" alt="Page 13">
+            <button class="quiz-button" onclick="navigate('page14')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page14" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <button class="quiz-button" onclick="navigate('page15')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page15" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <button class="quiz-button" onclick="navigate('page16')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page16" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <button class="quiz-button" onclick="navigate('page17')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page17" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <button class="quiz-button" onclick="navigate('page18')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page18" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <button class="quiz-button" onclick="navigate('page19')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+        <div id="page19" class="page quiz-container">
+            <div style="flex-direction: column;">
+            <button class="quiz-button" onclick="navigate('page20')">แตะเพื่อไปต่อ</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function navigate(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'flex';
+        }
+
+        function answerQuiz(choice) {
+            document.getElementById('quiz-result').innerText = `You chose: ${choice}!`;
+        }
+    </script>
+</body>
+</html>
